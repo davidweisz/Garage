@@ -1,0 +1,8 @@
+Z:\Dropbox\C#- Exercises\Ex03\B11 Ex03 Jeremy 201195294 David 321920530\GarageManagementSystem.Console\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Public\Documents\IDC\YEAR II\Semester II\C#\Exercises\Ex03\B11 Ex03 Jeremy 201195294 David 321920530\GarageManagementSystem.Console\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Public\Documents\IDC\YEAR II\Semester II\C#\Exercises\Ex03\B11 Ex03 Jeremy 201195294 David 321920530\GarageManagementSystem.Console\obj\x86\Debug\GarageManagementSystem.Console.exe
+C:\Users\Public\Documents\IDC\YEAR II\Semester II\C#\Exercises\Ex03\B11 Ex03 Jeremy 201195294 David 321920530\GarageManagementSystem.Console\obj\x86\Debug\GarageManagementSystem.Console.pdb
+C:\Users\Public\Documents\IDC\YEAR II\Semester II\C#\Exercises\Ex03\B11 Ex03 Jeremy 201195294 David 321920530\GarageManagementSystem.Console\bin\Debug\GarageManagementSystem.Console.exe
+C:\Users\Public\Documents\IDC\YEAR II\Semester II\C#\Exercises\Ex03\B11 Ex03 Jeremy 201195294 David 321920530\GarageManagementSystem.Console\bin\Debug\GarageManagementSystem.Console.pdb
+C:\Users\Public\Documents\IDC\YEAR II\Semester II\C#\Exercises\Ex03\B11 Ex03 Jeremy 201195294 David 321920530\GarageManagementSystem.Console\bin\Debug\Ex03.VehiclesObjectModel.dll
+C:\Users\Public\Documents\IDC\YEAR II\Semester II\C#\Exercises\Ex03\B11 Ex03 Jeremy 201195294 David 321920530\GarageManagementSystem.Console\bin\Debug\Ex03.VehiclesObjectModel.pdb

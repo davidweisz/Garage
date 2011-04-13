@@ -1,0 +1,11 @@
+Z:\Dropbox\C#- Exercises\Ex03\B11 Ex03 Jeremy 201195294 David 321920530\Ex03.VehiclesObjectModel\obj\Debug\ResolveAssemblyReference.cache
+\\vmware-host\Shared Folders\Desktop\Ex03\B11 Ex03 Jeremy 201195294 David 321920530\Ex03.VehiclesObjectModel\obj\Debug\ResolveAssemblyReference.cache
+\\vmware-host\Shared Folders\Desktop\Ex03\B11 Ex03 Jeremy 201195294 David 321920530\Ex03.VehiclesObjectModel\bin\Debug\Ex03.VehiclesObjectModel.dll
+\\vmware-host\Shared Folders\Desktop\Ex03\B11 Ex03 Jeremy 201195294 David 321920530\Ex03.VehiclesObjectModel\bin\Debug\Ex03.VehiclesObjectModel.pdb
+\\vmware-host\Shared Folders\Desktop\Ex03\B11 Ex03 Jeremy 201195294 David 321920530\Ex03.VehiclesObjectModel\obj\Debug\Ex03.VehiclesObjectModel.dll
+\\vmware-host\Shared Folders\Desktop\Ex03\B11 Ex03 Jeremy 201195294 David 321920530\Ex03.VehiclesObjectModel\obj\Debug\Ex03.VehiclesObjectModel.pdb
+C:\Users\Public\Documents\IDC\YEAR II\Semester II\C#\Exercises\Ex03\B11 Ex03 Jeremy 201195294 David 321920530\Ex03.VehiclesObjectModel\bin\Debug\Ex03.VehiclesObjectModel.dll
+C:\Users\Public\Documents\IDC\YEAR II\Semester II\C#\Exercises\Ex03\B11 Ex03 Jeremy 201195294 David 321920530\Ex03.VehiclesObjectModel\bin\Debug\Ex03.VehiclesObjectModel.pdb
+C:\Users\Public\Documents\IDC\YEAR II\Semester II\C#\Exercises\Ex03\B11 Ex03 Jeremy 201195294 David 321920530\Ex03.VehiclesObjectModel\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Public\Documents\IDC\YEAR II\Semester II\C#\Exercises\Ex03\B11 Ex03 Jeremy 201195294 David 321920530\Ex03.VehiclesObjectModel\obj\Debug\Ex03.VehiclesObjectModel.dll
+C:\Users\Public\Documents\IDC\YEAR II\Semester II\C#\Exercises\Ex03\B11 Ex03 Jeremy 201195294 David 321920530\Ex03.VehiclesObjectModel\obj\Debug\Ex03.VehiclesObjectModel.pdb

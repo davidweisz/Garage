@@ -1,0 +1,117 @@
+<stylecopresultscache>
+  <version>10</version>
+  <sourcecode name="ElectricVehicle.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/23/2011 09:11:04</timestamp>
+      <milliseconds>999</milliseconds>
+    </settings>
+    <timestamp>04/01/2011 19:11:49</timestamp>
+    <milliseconds>0</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="AssemblyInfo.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/23/2011 09:11:04</timestamp>
+      <milliseconds>999</milliseconds>
+    </settings>
+    <timestamp>04/01/2011 10:57:43</timestamp>
+    <milliseconds>0</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="RegularVan.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/23/2011 09:11:04</timestamp>
+      <milliseconds>999</milliseconds>
+    </settings>
+    <timestamp>04/01/2011 18:15:37</timestamp>
+    <milliseconds>0</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Vehicle.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/23/2011 09:11:04</timestamp>
+      <milliseconds>999</milliseconds>
+    </settings>
+    <timestamp>04/01/2011 16:26:41</timestamp>
+    <milliseconds>0</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="RegularVehicle.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/23/2011 09:11:04</timestamp>
+      <milliseconds>999</milliseconds>
+    </settings>
+    <timestamp>04/01/2011 19:25:01</timestamp>
+    <milliseconds>0</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Tyre.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/23/2011 09:11:04</timestamp>
+      <milliseconds>999</milliseconds>
+    </settings>
+    <timestamp>04/01/2011 19:24:19</timestamp>
+    <milliseconds>0</milliseconds>
+    <violations>
+      <violation namespace="Microsoft.StyleCop.CSharp.LayoutRules" rule="ElementMustNotBeOnSingleLine" ruleCheckId="SA1502">
+        <context>The constructor must not be placed on a single line. The opening and closing curly brackets must each be placed on their own line.</context>
+        <line>22</line>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
+  <sourcecode name="ValueOutOfRangeException.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/23/2011 09:11:04</timestamp>
+      <milliseconds>999</milliseconds>
+    </settings>
+    <timestamp>04/01/2011 19:25:01</timestamp>
+    <milliseconds>0</milliseconds>
+    <violations>
+      <violation namespace="Microsoft.StyleCop.CSharp.LayoutRules" rule="ElementMustNotBeOnSingleLine" ruleCheckId="SA1502">
+        <context>The constructor must not be placed on a single line. The opening and closing curly brackets must each be placed on their own line.</context>
+        <line>14</line>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
+  <sourcecode name="RegularCar.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/23/2011 09:11:04</timestamp>
+      <milliseconds>999</milliseconds>
+    </settings>
+    <timestamp>04/01/2011 19:25:43</timestamp>
+    <milliseconds>0</milliseconds>
+    <violations />
+  </sourcecode>
+  <project key="1849712511">
+    <configuration>DEBUG;TRACE</configuration>
+  </project>
+  <sourcecode name="ElectricCar.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/23/2011 09:11:04</timestamp>
+      <milliseconds>999</milliseconds>
+    </settings>
+    <timestamp>04/01/2011 19:25:56</timestamp>
+    <milliseconds>0</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="ElectricMotorcyle.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/23/2011 09:11:04</timestamp>
+      <milliseconds>999</milliseconds>
+    </settings>
+    <timestamp>04/01/2011 19:25:56</timestamp>
+    <milliseconds>0</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="RegularMotorcycle.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/23/2011 09:11:04</timestamp>
+      <milliseconds>999</milliseconds>
+    </settings>
+    <timestamp>04/01/2011 19:25:56</timestamp>
+    <milliseconds>0</milliseconds>
+    <violations />
+  </sourcecode>
+</stylecopresultscache>

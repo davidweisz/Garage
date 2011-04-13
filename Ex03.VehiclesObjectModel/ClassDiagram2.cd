@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Ex03.VehiclesObjectModel.ElectricCar">
+    <Position X="3.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAEAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ElectricCar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ex03.VehiclesObjectModel.Vehicle">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Ex03.VehiclesObjectModel.Vehicle.eLicenseType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Vehicle.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AgQAAAAAAAAAACQAAAAgEAAAAAAgAABAAQAAAAgAAgA=</HashCode>
+      <FileName>Vehicle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ex03.VehiclesObjectModel.ElectricMotorcyle">
+    <Position X="6" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAEAAAAAIAAIIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ElectricMotorcyle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ex03.VehiclesObjectModel.ElectricVehicle">
+    <Position X="5" Y="1" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAACAIAKAAABAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ElectricVehicle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ex03.VehiclesObjectModel.RegularCar">
+    <Position X="8.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAIAAAIAAAAAAAAQAAAAAAAAAgAAA=</HashCode>
+      <FileName>RegularCar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ex03.VehiclesObjectModel.RegularMotorcycle">
+    <Position X="10.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAEAAAAAIAAAIAAAAAAAAQAAAAAAAAAgAAA=</HashCode>
+      <FileName>RegularMotorcycle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ex03.VehiclesObjectModel.RegularVan">
+    <Position X="12.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAIAAAAAAAAAAAAQAAAAAAAAAgAAA=</HashCode>
+      <FileName>RegularVan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ex03.VehiclesObjectModel.RegularVehicle">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Ex03.VehiclesObjectModel.RegularVehicle.eFuelType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>RegularVehicle.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAQAAAAAAAAAAAAABAIIEAAEAgAAAAg=</HashCode>
+      <FileName>RegularVehicle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ex03.VehiclesObjectModel.Tyre">
+    <Position X="6" Y="6.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAIAIAAAAAAAAAAAAAAAAAACAAIAABBCCAAAAAAAAAA=</HashCode>
+      <FileName>Tyre.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ex03.VehiclesObjectModel.ValueOutOfRangeException" Collapsed="true">
+    <Position X="8" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValueOutOfRangeException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
