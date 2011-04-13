@@ -6,6 +6,9 @@ using Ex03.VehiclesObjectModel;
 
 namespace GarageManagementSystem.Console
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Garage
     {
         private const int k_ExitCode = 0;
