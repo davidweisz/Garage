@@ -7,15 +7,22 @@ namespace Ex03.VehiclesObjectModel
 {
     public sealed class RegularMotorcycle : RegularVehicle
     {
-        private eLicenseType m_LicenseType;
-
         private const int k_DefaultNumberOfTyres = 2;
         private const float k_DefaultMaxTyreAirPressure = 33;
         private const eFuelType k_DefaultFuelType = eFuelType.Octan95;
         private const float k_DefaultMaxTankCapacity = 7;
 
+        private Motorcyle m_RegularMotorcyle;
+
+        internal Motorcyle Motorcyle
+        {
+            get { return m_RegularMotorcyle; }
+            set { m_RegularMotorcyle = value; }
+        }
+
         public RegularMotorcycle()
         {
+            initProperties();
             Tyres = new List<Tyre>();
             for (int i = 0; i < k_DefaultNumberOfTyres; i++)
             {
@@ -26,10 +33,15 @@ namespace Ex03.VehiclesObjectModel
             FuelType = k_DefaultFuelType;
         }
 
-        public eLicenseType LicenseType
+        public override void initProperties()
         {
-            get { return m_LicenseType; }
-            set { m_LicenseType = value; }
+            Motorcyle = new Motorcyle();
+            Properties = Motorcyle.MotorcyleProperties;
+        }
+
+        public override bool TrySetVehicleProperties(string i_InputUser, int i_IdxProperties)
+        {
+            return Motorcyle.TrySetMotorcyleProperties(i_InputUser);
         }
     }
 }

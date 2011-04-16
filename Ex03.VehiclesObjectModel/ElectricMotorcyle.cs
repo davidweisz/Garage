@@ -7,14 +7,21 @@ namespace Ex03.VehiclesObjectModel
 {
     public sealed class ElectricMotorcyle : ElectricVehicle
     {
-        protected internal eLicenseType m_LicenseType;
-
         private const int k_DefaultNumberOfTyres = 2;
         private const float k_DefaultMaxTyreAirPressure = 33;
-        private const float k_DefaultMaxChargeCapacity = (float) 2.5;
+        private const float k_DefaultMaxChargeCapacity = (float)2.5;
+
+        private Motorcyle m_ElectricMotorcyle;
+
+        internal Motorcyle Motorcyle
+        {
+            get { return m_ElectricMotorcyle; }
+            set { m_ElectricMotorcyle = value; }
+        }
 
         public ElectricMotorcyle()
         {
+            initProperties();
             Tyres = new List<Tyre>();
             for (int i = 0; i < k_DefaultNumberOfTyres; i++)
             {
@@ -24,10 +31,15 @@ namespace Ex03.VehiclesObjectModel
             MaxBatteryCharge = k_DefaultMaxChargeCapacity;
         }
 
-        public eLicenseType LicenseType
+        public override void initProperties()
         {
-            get { return m_LicenseType; }
-            set { m_LicenseType = value; }
+            Motorcyle = new Motorcyle();
+            Properties = Motorcyle.MotorcyleProperties;
+        }
+
+        public override bool TrySetVehicleProperties(string i_InputUser, int i_IdxProperties)
+        {
+            return Motorcyle.TrySetMotorcyleProperties(i_InputUser);
         }
     }
 }

@@ -11,15 +11,8 @@ namespace Ex03.VehiclesObjectModel
         protected internal string m_LicenseNumber;
         protected internal float m_FuelPercentage;
         protected internal List<Tyre> m_Tyres;
-
-        public enum eLicenseType
-        {
-            A,
-            A1,
-            A2,
-            B
-        }
-
+        protected internal List<string> m_VehicleProperties;
+        
         public string ModelName
         {
             get { return m_ModelName; }
@@ -42,6 +35,12 @@ namespace Ex03.VehiclesObjectModel
         {
             get { return m_Tyres; }
             set { m_Tyres = value; }
+        }
+
+        public List<string> Properties
+        {
+            get { return m_VehicleProperties; }
+            set { m_VehicleProperties = value; }
         }
 
         public void updateTyreDetails(int i_TyreIndex, string i_TyreBrandName, float i_CurrentPressure)
@@ -69,5 +68,8 @@ namespace Ex03.VehiclesObjectModel
             }
             return result;
         }
+
+        public abstract void initProperties();
+        public abstract bool TrySetVehicleProperties(string i_InputUser, int i_Idx);
     }
 }

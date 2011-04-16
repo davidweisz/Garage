@@ -40,9 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Car.cs" />
     <Compile Include="ElectricCar.cs" />
     <Compile Include="ElectricMotorcyle.cs" />
     <Compile Include="ElectricVehicle.cs" />
+    <Compile Include="Motorcyle.cs" />
     <Compile Include="RegularCar.cs" />
     <Compile Include="RegularMotorcycle.cs" />
     <Compile Include="RegularVan.cs" />
@@ -51,9 +53,6 @@
     <Compile Include="ValueOutOfRangeException.cs" />
     <Compile Include="Vehicle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram2.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

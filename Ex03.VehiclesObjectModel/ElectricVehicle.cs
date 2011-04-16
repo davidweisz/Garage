@@ -16,14 +16,14 @@ namespace Ex03.VehiclesObjectModel
         public float MaxBatteryCharge
         {
             get { return m_MaxBatteryCharge; }
-            set 
-            { 
+            set
+            {
                 m_MaxBatteryCharge = value;
-                updateBattertCharge();
+                updateBatteryCharge();
             }
         }
 
-        private void updateBattertCharge()
+        private void updateBatteryCharge()
         {
             if (m_MaxBatteryCharge != 0)
             {
@@ -34,10 +34,10 @@ namespace Ex03.VehiclesObjectModel
         public float HoursOfChargeLeft
         {
             get { return m_HoursOfChargeLeft; }
-            set 
-            { 
+            set
+            {
                 m_HoursOfChargeLeft = value;
-                updateBattertCharge();
+                updateBatteryCharge();
             }
         }
 
@@ -61,5 +61,6 @@ namespace Ex03.VehiclesObjectModel
                 throw new ValueOutOfRangeException("Electrical charge overflow");
             }
         }
+
     }
 }

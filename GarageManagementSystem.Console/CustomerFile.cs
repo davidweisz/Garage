@@ -65,7 +65,7 @@ namespace GarageManagementSystem.Console
 
         public void PrintFileInformation()
         {
-            System.Console.WriteLine(string.Format("Vehicle owner: {1}{0}Owner Phone Number: {2}{0}Vehicle details:{0}License Number: {3}{0}Model Name: {4}{0}Fuel Tank Percentage: {5}{0}Vehicle Status: {6}{0}", Environment.NewLine, Name, PhoneNumber, Vehicle.LicenseNumber, Vehicle.ModelName, Vehicle.FuelPercentage, Status));
+            System.Console.WriteLine(string.Format("Vehicle owner: {1}{0}Owner Phone Number: {2}{0}Vehicle details:{0}License Number: {3}{0}Model Name: {4}{0}Fuel Tank Percentage: {5:00}%{0}Vehicle Status: {6}{0}", Environment.NewLine, Name, PhoneNumber, Vehicle.LicenseNumber, Vehicle.ModelName, Vehicle.FuelPercentage, Status));
         }
     }
 }

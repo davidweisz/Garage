@@ -63,7 +63,11 @@ namespace GarageManagementSystem.Console
         public void Run()
         {
             // Print a welcome note.
-           printWelcomeScreen();
+            printWelcomeScreen();
+
+            //Setting color details for console
+            changeConsoleColors(ConsoleColor.Blue, ConsoleColor.Yellow);
+
            int userInputInt;
 
             while (true)
@@ -120,6 +124,12 @@ namespace GarageManagementSystem.Console
             }
         }
 
+        private static void changeConsoleColors(ConsoleColor i_BackgroundColor, ConsoleColor i_ForegroundColor)
+        {
+            System.Console.BackgroundColor = i_BackgroundColor;
+            System.Console.ForegroundColor = i_ForegroundColor;
+        }
+
         private void waitForUser()
         {
             System.Console.Write("Press any key to continue...");
@@ -160,12 +170,7 @@ namespace GarageManagementSystem.Console
             }
             else
             {
-                System.Console.Write("Enter customer name: ");
-                string customerName = System.Console.ReadLine();
-                System.Console.Write("Enter customer phone number: ");
-                string customerPhoneNumber = System.Console.ReadLine();
-
-                newCustomerFile = new CustomerFile(customerName, customerPhoneNumber);
+                addCustomerDetailsToFile(out newCustomerFile);
 
                 VehicleFactory.eVehicleTypes vehicleTypeInput;
                 while (true)
@@ -182,33 +187,35 @@ namespace GarageManagementSystem.Console
                     break;
                 }
 
-                Vehicle customerVehicle = VehicleFactory.createNewVehicle(vehicleTypeInput);
-                
-                // Attachs new vehicle to customer file
-                newCustomerFile.Vehicle = customerVehicle;
+                newCustomerFile.Vehicle = VehicleFactory.createNewVehicle(vehicleTypeInput);
 
+                addVehicleModelName(newCustomerFile);
+                
                 // Adds the license number to the vehicle
                 newCustomerFile.Vehicle.LicenseNumber = inputLicenseString;
 
-                // Get special options for regular vehicles
-                if (customerVehicle is RegularVehicle)
-                {
-                    RegularVehicle.eFuelType fuelType= getFuelTypeFromUser();
-                    (newCustomerFile.Vehicle as RegularVehicle).FuelType = fuelType;
-                    float fuelQuantityFromUser = getFuelQuantityFromUser();
-                    (newCustomerFile.Vehicle as RegularVehicle).FuelQuantity = fuelQuantityFromUser;
-                }
-                else
-                {
-                    // Add special options for electric vehicles
-                    float chargeLeftInput = getBatteryChargeLeftFromUser();
-                    (newCustomerFile.Vehicle as ElectricVehicle).HoursOfChargeLeft = chargeLeftInput;
-                }
+                // Get power information (fuel or electrical source)
+                getPowerSourceInformation(newCustomerFile);
 
                 // Update tyres pressure
                 System.Console.WriteLine("Update tyres details - ");
                 updateTyresForCustomerVehicle(newCustomerFile);
 
+
+                // Add other special properties
+                int propertieIndex = 0;
+                bool inputPropertieSuccess;
+                foreach (string propertie in newCustomerFile.Vehicle.Properties)
+                {
+                    inputPropertieSuccess= false;
+                    do
+                    {
+                        System.Console.Write(propertie);
+                        string userInput = System.Console.ReadLine();
+                        inputPropertieSuccess = newCustomerFile.Vehicle.TrySetVehicleProperties(userInput, propertieIndex);
+                    } while (inputPropertieSuccess == false);
+                    propertieIndex++;
+                }
 
                 // Adds the new file
                 CustomerFiles.Add(newCustomerFile);
@@ -216,17 +223,60 @@ namespace GarageManagementSystem.Console
             
         }
 
+        private void addVehicleModelName(CustomerFile i_CustomerFile)
+        {
+            System.Console.Write("Enter vehicle's model name: ");
+            string vehicleModelName = System.Console.ReadLine();
+            i_CustomerFile.Vehicle.ModelName = vehicleModelName;
+        }
+
+        private void getPowerSourceInformation(CustomerFile io_CustomerFile)
+        {
+            if (io_CustomerFile.Vehicle is RegularVehicle)
+            {
+                RegularVehicle.eFuelType fuelType = getFuelTypeFromUser();
+                (io_CustomerFile.Vehicle as RegularVehicle).FuelType = fuelType;
+                float fuelQuantityFromUser = getFuelQuantityFromUser();
+                (io_CustomerFile.Vehicle as RegularVehicle).FuelQuantity = fuelQuantityFromUser;
+            }
+            else
+            {
+                // Add special options for electric vehicles
+                float chargeLeftInput = getBatteryChargeLeftFromUser();
+                (io_CustomerFile.Vehicle as ElectricVehicle).HoursOfChargeLeft = chargeLeftInput;
+            }
+        }
+
+        private static void addCustomerDetailsToFile(out CustomerFile o_NewCustomerFile)
+        {
+            System.Console.Write("Enter customer name: ");
+            string customerName = System.Console.ReadLine();
+            System.Console.Write("Enter customer phone number: ");
+            string customerPhoneNumber = System.Console.ReadLine();
+
+            o_NewCustomerFile = new CustomerFile(customerName, customerPhoneNumber);
+
+        }
+
         private void updateTyresForCustomerVehicle(CustomerFile newCustomerFile)
         {
             string tyresBrandName = getBrandNameFromUser();
-            System.Console.Write("Enter tyre max pressure: ");
-            float tyresMaxPressureByVendor = getPressuresFromUser();
-            foreach (Tyre tyre in newCustomerFile.Vehicle.Tyres)
+            try
             {
-                tyre.BrandName = tyresBrandName;
-                tyre.MaxPressure = tyresMaxPressureByVendor;
+                System.Console.Write("Enter tyre max pressure: ");
+                float tyresMaxPressureByVendor = getPressuresFromUser();
                 System.Console.Write("Enter tyre current pressure: ");
-                tyre.AirPressure = getPressuresFromUser();
+                float tyreCurrentAirPressure = getPressuresFromUser();
+                foreach (Tyre tyre in newCustomerFile.Vehicle.Tyres)
+                {
+                    tyre.BrandName = tyresBrandName;
+                    tyre.MaxPressure = tyresMaxPressureByVendor;
+                    tyre.AirPressure = tyreCurrentAirPressure;
+                }
+            }
+            catch (FormatException e)
+            {
+                System.Console.WriteLine(e.Data);
             }
         }
 
@@ -261,14 +311,22 @@ namespace GarageManagementSystem.Console
 
         private static VehicleFactory.eVehicleTypes getVehicleTypeFromUser()
         {
-            System.Console.Write("Choose vehicle type - ");
             string[] vehicleTypes = Enum.GetNames(typeof(VehicleFactory.eVehicleTypes));
+            int optionCounter = 0;
+            System.Console.WriteLine(@"
+/*===================================================================*\
+  ----------------------Choose vehicle type--------------------------
+\*===================================================================*/");
             foreach (string type in vehicleTypes)
             {
-                System.Console.Write(string.Format(" {0}", type));
+                System.Console.Write(string.Format(" {0} - {1}{2}", optionCounter, type, Environment.NewLine));
+                optionCounter++;
             }
-            System.Console.Write(": ");
 
+            System.Console.Write(@"
+\*===================================================================*/
+
+>>");
             string vehicleTypeInputString = System.Console.ReadLine();
 
             VehicleFactory.eVehicleTypes vehicleTypeInput;
@@ -379,6 +437,11 @@ namespace GarageManagementSystem.Console
         {
             System.Console.Write("Enter License Number: ");
             string licenseNumber = System.Console.ReadLine();
+            if (licenseNumber.Length == 0)
+            {
+                licenseNumber = getLicenseNumberFromUser();
+            }
+
             return licenseNumber;
         }
 
@@ -394,7 +457,7 @@ namespace GarageManagementSystem.Console
 
             if (Enum.TryParse<CustomerFile.eVehicleStatus>(userInputString, out newStatus) == false)
             {
-                System.Console.Write("Please a correct status [unfixed, fixed, paid]: ");
+                System.Console.Write(string.Format("Incorrect status{0}", Environment.NewLine));
                 return getVehicleStatusFromUser();
             }
             return newStatus;
@@ -493,14 +556,22 @@ namespace GarageManagementSystem.Console
 
         private RegularVehicle.eFuelType getFuelTypeFromUser()
         {
-            string[] fuelTypeArray = Enum.GetNames(typeof(RegularVehicle.eFuelType));
 
-            System.Console.Write("Please choose a fuel type from following options - ");
+            string[] fuelTypeArray = Enum.GetNames(typeof(RegularVehicle.eFuelType));
+            int optionCounter = 0;
+            System.Console.WriteLine(@"
+/*===================================================================*\
+  ----------------------Choose fuel type--------------------------
+\*===================================================================*/");
             foreach (string fuelTypeString in fuelTypeArray)
             {
-                System.Console.Write(string.Format(" {0}", fuelTypeString));
+                System.Console.Write(string.Format(" {0} - {1}{2}", optionCounter, fuelTypeString, Environment.NewLine));
+                optionCounter++;
             }
-            System.Console.Write(": ");
+            System.Console.Write(@"
+\*===================================================================*/
+
+>>");
 
             string userInputString = System.Console.ReadLine();
             RegularVehicle.eFuelType userInputFuelType;
@@ -593,12 +664,12 @@ file.Name,
 file.Status));
             foreach (Tyre tyre in file.Vehicle.Tyres)
             {
-                System.Console.WriteLine(string.Format("Pressure: {1}{0}Brand: {2}", Environment.NewLine, tyre.AirPressure, tyre.BrandName));
+                System.Console.WriteLine(string.Format("Brand: {1} Pressure: {2}{0}", Environment.NewLine, tyre.BrandName, tyre.AirPressure));
             }
 
             if (file.Vehicle is RegularVehicle)
             {
-                System.Console.WriteLine(string.Format("Fuel type: {1}{0}Fuel percentange: {2}{0}Tank Max capacity: {3}", Environment.NewLine,
+                System.Console.WriteLine(string.Format("Fuel type: {1}{0}Fuel percentange: {2:0.00}%{0}Tank Max capacity: {3}", Environment.NewLine,
                     ((RegularVehicle)file.Vehicle).FuelType, ((RegularVehicle)file.Vehicle).FuelPercentage, ((RegularVehicle)file.Vehicle).FuelMaxCapacity));
             }
             else if (file.Vehicle is ElectricVehicle)

@@ -7,10 +7,13 @@ namespace Ex03.VehiclesObjectModel
 {
     public class ValueOutOfRangeException : Exception
     {
+        private float m_MinValue;
+        private float m_MaxValue;
+
         public ValueOutOfRangeException(string i_Message)
         {
         }
-
-        public ValueOutOfRangeException() : this(null) { }
+        
+        public ValueOutOfRangeException() : this(string.Empty) { }
     }
 }
